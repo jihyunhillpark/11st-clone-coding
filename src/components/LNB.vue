@@ -1,7 +1,8 @@
 <template>
-  <nav>
+  <nav class="show">
     <div class="user">
       <a href="">로그인</a>
+      <div class="flex-space"></div>
       <div class="close-nav"></div>
     </div>
     <div class="container">
@@ -40,6 +41,9 @@ nav {
       &:hover {
         text-decoration: underline;
       }
+    }
+    .flex-space {
+      flex-grow: 1; // 증가 너비 비율
     }
     .close-nav {
       width: 36px;
