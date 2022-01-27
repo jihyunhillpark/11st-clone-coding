@@ -7,3 +7,28 @@ a {
   color: #333;
   text-decoration: none;
 }
+.inner {
+  width: 1240px; 
+  margin: 0 auto; // 가운데 정렬
+  position: relative; // inner를 기준으로 잡을 수 있도록 선언
+}
+section {
+  .inner {
+    padding: 50px 0;
+    box-sizing: border-box;
+  }
+  h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+.lazy-load-element {
+  opacity: 0;
+  transition: 1s;
+  transform: translateY(100px);
+}
+.lazy-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
