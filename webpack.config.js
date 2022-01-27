@@ -6,9 +6,9 @@ module.exports = (env, options) => {
   console.log(env, options)
   return {
     resolve: {
-      extensions: ['.js', '.vue'],
+      extensions: ['.js', '.vue'], // 해당 확장자는 생략 가능하게 한다.
       alias: {
-        '~': `${__dirname}/src`
+        '~': `${__dirname}/src` // 경로 별명
       }
     },
     entry: './src/main.js',
