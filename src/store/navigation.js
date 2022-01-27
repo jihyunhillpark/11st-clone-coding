@@ -6,14 +6,28 @@ export default {
   getters: {
 
   },
-  mutations: {
-    toggleIsShow(state) {
-      state.isShow = !state.isShow
+  mutations: { // 변이
+    setState(state, payload) {
+      // const payload = {
+      //  isShow: true
+      // }
+      // ['isShow']
+      Object.keys(payload).forEach(key => {
+        // state.isShow = true
+        state[key] = payload[key] //isShow
+      })
     }
   },
   actions: {
     onNav({ commit }) {
-      commit('toggleIsShow')
+      commit('setState', {
+        isShow: true
+      })
+    },
+    offNav({ commit }) {
+      commit('setState', {
+        isShow: false
+      })
     }
   }
 }

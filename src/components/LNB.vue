@@ -5,7 +5,9 @@
     <div class="user">
       <a href="">로그인</a>
       <div class="flex-space"></div>
-      <div class="close-nav"></div>
+      <div
+        class="close-nav"
+        @click="offNav"></div>
     </div>
     <div
       class="container"
@@ -56,6 +58,11 @@
       </div>
     </div>
   </nav>
+  <div 
+    v-if="isShow"
+    class="nav-bg"
+    @click="offNav">
+  </div>
 </template>
 
 <script>
@@ -82,6 +89,9 @@ export default {
       })
       this.done=true
       console.log(this.navigations)
+    },
+    offNav() {
+      this.$store.dispatch('navigation/offNav')
     }
   }
 }
@@ -253,5 +263,14 @@ nav {
       }
     }
   }
+}
+.nav-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(#000, .2);
+  z-index: 98;
 }
 </style>
