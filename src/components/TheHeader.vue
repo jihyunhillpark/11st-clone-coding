@@ -1,21 +1,30 @@
 <template>
   <header>
-    <RouterLink to="/">
-      Home.
-    </RouterLink>
-    <RouterLink to="/about">
-      About.
-    </RouterLink>
+    <div class="inner">
+      <div
+        class="open-navigation-drawer"
+        @click="onNav">
+      </div>
+      <div class="search">
+      </div>
+      <div class="ranking">
+      </div>
+      <div class="user-menu">
+      </div>
+    </div>
   </header>
 </template>
 
-<style lang="scss" scoped>
-header {
-  padding: 20px 20px;
-  border-bottom: 1px solid $color-primary;
-  a {
-    margin-right: 10px;
-    line-height: 1;
+<script>
+export default {
+  methods: {
+    onNav() {
+      
+    }
   }
 }
+</script>
+
+<style lang="scss" scoped>
+
 </style>
