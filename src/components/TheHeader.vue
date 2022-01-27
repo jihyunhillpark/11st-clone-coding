@@ -37,8 +37,27 @@
           class="open-more"
           @click="toggleRankingWrap"></div>
       </div>
-      <div class="user-menu">
-      </div>
+      <ul class="user-menu">
+        <li>
+          <a href=""></a>
+          <ul class="my-menu">
+            <li
+              v-for="menu in myMenu"
+              :key="menu.name">
+              <a href=""></a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href=""></a>
+        </li>
+        <li>
+          <a href=""></a>
+        </li>
+        <li>
+          <a href=""></a>
+        </li>
+      </ul>
     </div>
   </header>
 </template>
@@ -54,7 +73,15 @@ export default {
   data() {
     return {
       searchText: '',
-      rankings: {}
+      rankings: {},
+      userMenu: [],
+      myMenu: [
+        { name: '나의 쿠폰'}, 
+        { name: '주문/배송조회'},
+        { name: '취소/반품/교환'},
+        { name: '고객센터'},
+        { name: '회원정보'}
+      ],
     }
   },
   mounted() {
@@ -231,6 +258,30 @@ header {
         box-sizing: border-box;
         transform: rotate(45deg);
       }
+    }
+  }
+  .user-menu {
+    display: flex;
+    > li {
+      margin-right: 25px;
+      padding: 7px 0;
+      position: relative;
+      > a {
+        display: block;
+        width: 48px;
+        height: 48px;
+        background-image: url("https://trusting-williams-8cacfb.netlify.app/images/globals_2x.png");
+        background-size: 363px; // Origin 96px
+      }
+      &:nth-child(1) > a { background-position: -106px -145px; }
+      &:nth-child(2) > a { background-position: 0px -198px; }
+      &:nth-child(3) > a { background-position: -53px -198px; }
+      &:nth-child(4) > a { background-position: -94px -70px; }
+      &:nth-child(1) > a:hover { background-position: -53px -145px; }
+      &:nth-child(2) > a:hover { background-position: -159px -145px; }
+      &:nth-child(3) > a:hover { background-position: 0px -145px; }
+      &:nth-child(4) > a:hover { background-position: -106px -198px; }
+      &:last-child { margin-right: 0; }
     }
   }
 }
