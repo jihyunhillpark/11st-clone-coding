@@ -7,11 +7,13 @@ export default {
 
   },
   mutations: {
-
+    toggleIsShow(state) {
+      state.isShow = !state.isShow
+    }
   },
   actions: {
-    onNav() {
-
+    onNav({ commit }) {
+      commit('toggleIsShow')
     }
   }
 }

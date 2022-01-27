@@ -5,7 +5,8 @@ import store from '~/store'
 import fetch from '~/plugins/fetch'
 
 const app = createApp(App)
+// use - vue plugin 등록
 app.use(router)
-app.use(store)
-app.use(fetch)
+app.use(store) // navigation.js를 통해 navigation이름으로 등록한 모듈들을 가져와서 쓰겠다.
+app.use(fetch) // createApp 되는 순간 install 객체 생성
 app.mount('#app')
