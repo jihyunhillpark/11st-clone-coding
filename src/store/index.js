@@ -1,8 +1,9 @@
 import { createStore } from 'vuex'
-import heropy from './heropy'
+import navigation from './navigation'
 
+// 생성된 스토어를 내보낸다.
 export default createStore({
   modules: {
-    heropy
+    navigation
   }
 })

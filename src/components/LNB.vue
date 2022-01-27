@@ -1,7 +1,7 @@
 <template>
   <nav 
     v-if="done"
-    class="show">
+    :class="{ show: isShow }">
     <div class="user">
       <a href="">로그인</a>
       <div class="flex-space"></div>
@@ -65,6 +65,11 @@ export default {
       navigations: {},
       done: false,
       categoryHover: -1
+    }
+  },
+  computed: {
+    isShow() {
+      return this.$store.state.navigation.isShow
     }
   },
   created() {
